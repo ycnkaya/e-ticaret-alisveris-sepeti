@@ -1,0 +1,284 @@
+/**
+ * ================================
+ * RESPONSIVE TASARIM (responsive.css)
+ * ================================
+ * 
+ * CSS Kazanımları:
+ * - Media Queries
+ * - Mobile-First Tasarım
+ * - Flexible Layouts
+ * - Breakpoints:
+ *   - Mobile: < 768px
+ *   - Tablet: 768px - 1024px
+ *   - Desktop: > 1024px
+ */
+
+/* ==================== */
+/* MOBILE (< 768px)     */
+/* ==================== */
+
+@media (max-width: 767px) {
+  /* HEADER */
+  .header-content {
+    flex-direction: column;
+    gap: var(--spacing-md);
+    text-align: center;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  .nav-link {
+    padding: var(--spacing-md);
+  }
+
+  /* CONTAINER */
+  .container {
+    padding: 0 var(--spacing-md);
+  }
+
+  /* FILTERS */
+  .filters {
+    flex-direction: column;
+  }
+
+  .filter-group {
+    min-width: 100%;
+  }
+
+  /* PRODUCTS GRID */
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: var(--spacing-md);
+  }
+
+  .product-card h3 {
+    font-size: var(--font-size-base);
+    padding: var(--spacing-sm);
+  }
+
+  .product-card img {
+    height: 150px;
+  }
+
+  /* CART LAYOUT */
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  /* TABLE */
+  table {
+    font-size: var(--font-size-sm);
+  }
+
+  table th,
+  table td {
+    padding: var(--spacing-sm);
+  }
+
+  /* BUTTONS */
+  .btn {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+  }
+
+  .btn-large {
+    padding: var(--spacing-md);
+    font-size: var(--font-size-base);
+  }
+
+  /* MAIN CONTENT */
+  .main-content {
+    padding: var(--spacing-md) 0;
+  }
+
+  .main-content h2 {
+    font-size: var(--font-size-xl);
+  }
+
+  /* FOOTER */
+  .footer {
+    padding: var(--spacing-lg);
+  }
+
+  /* DISCOUNT INPUT */
+  .discount-input {
+    flex-direction: column;
+  }
+
+  .discount-input button {
+    width: 100%;
+  }
+
+  /* INPUTS */
+  input,
+  select,
+  textarea {
+    font-size: 16px; /* iOS zoom gereklilikleri */
+  }
+
+  /* CART BADGE */
+  .cart-badge {
+    top: -6px;
+    right: -6px;
+  }
+}
+
+/* ==================== */
+/* TABLET (768px-1024px)*/
+/* ==================== */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* PRODUCTS GRID */
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+
+  /* CART LAYOUT */
+  .cart-container {
+    grid-template-columns: 1fr 280px;
+  }
+
+  /* NAVBAR */
+  .navbar ul {
+    gap: var(--spacing-md);
+  }
+
+  /* FILTERS */
+  .filters {
+    gap: var(--spacing-md);
+  }
+
+  .filter-group {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+/* ==================== */
+/* DESKTOP (> 1024px)   */
+/* ==================== */
+
+@media (min-width: 1025px) {
+  /* PRODUCTS GRID */
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  /* CART LAYOUT */
+  .cart-container {
+    grid-template-columns: 1fr 320px;
+  }
+
+  /* STICKY ELEMENTS */
+  .cart-summary {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+/* ==================== */
+/* EXTRA LARGE (> 1440px)*/
+/* ==================== */
+
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1440px;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+}
+
+/* ==================== */
+/* PRINT STYLE          */
+/* ==================== */
+
+@media print {
+  body {
+    background-color: white;
+  }
+
+  .header,
+  .footer,
+  .btn,
+  button {
+    display: none;
+  }
+
+  .cart-summary {
+    position: static;
+  }
+
+  table {
+    border: 1px solid black;
+  }
+
+  table th,
+  table td {
+    border: 1px solid black;
+  }
+}
+
+/* ==================== */
+/* ACCESSIBILITY        */
+/* ==================== */
+
+/* Reduced motion için */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Dark mode (opsiyonel - Sprint 2 Bonus) */
+@media (prefers-color-scheme: dark) {
+  /* 
+    TODO: Dark mode uygulamak istersen buraya ekle
+    
+    :root {
+        --dark-color: #f9fafb;
+        --light-color: #1f2937;
+    }
+    
+    body {
+        background-color: #111827;
+        color: #f9fafb;
+    }
+    */
+}
+
+/* ==================== */
+/* ORIENTATION          */
+/* ==================== */
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    padding: var(--spacing-sm) 0;
+  }
+
+  .navbar ul {
+    gap: var(--spacing-sm);
+  }
+}
+
+/* ==================== */
+/* HIGH RESOLUTION      */
+/* ==================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  /* Retina ekranlar için keskinleştirme */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Siparişlerim - ShopHub</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <h1>🛒 ShopHub</h1>
+          </div>
+
+          <nav class="navbar">
+            <ul>
+              <li><a href="index.html" class="nav-link">Anasayfa</a></li>
+              <li><a href="profil.html" class="nav-link">Profilim</a></li>
+              <li>
+                <a href="siparis-gecmisi.html" class="nav-link active"
+                  >Siparişlerim</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <div class="container">
+        <section class="orders-section">
+          <h2>📦 Siparişlerim</h2>
+
+          <div id="ordersContainer" class="orders-container">
+            <!-- Siparişler buraya dinamik olarak eklenecek -->
+          </div>
+
+          <div id="noOrders" class="empty-message">
+            <p>Henüz hiç sipariş vermediniz. 🛍️</p>
+            <a href="index.html" class="btn btn-primary">Alışverişe Başla</a>
+          </div>
+        </section>
+
+        <!-- Sprint 2: Sipariş Özeti -->
+        <section class="orders-summary">
+          <h2>📊 Sipariş Özeti</h2>
+
+          <div class="summary-cards">
+            <div class="summary-card">
+              <h3>Toplam Sipariş</h3>
+              <p id="summaryOrderCount" class="big-number">0</p>
+            </div>
+
+            <div class="summary-card">
+              <h3>Toplam Harcama</h3>
+              <p id="summaryTotalSpent" class="big-number">₺0.00</p>
+            </div>
+
+            <div class="summary-card">
+              <h3>Ortalama Sipariş Tutar</h3>
+              <p id="summaryAvgOrder" class="big-number">₺0.00</p>
+            </div>
+
+            <div class="summary-card">
+              <h3>En Çok Satılan Ürün</h3>
+              <p id="summaryTopProduct" class="big-number">-</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="orders-actions">
+          <a href="index.html" class="btn btn-secondary">← Geri Dön</a>
+        </div>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2024 ShopHub. Tüm hakları saklıdır.</p>
+      </div>
+    </footer>
+
+    <script src="js/orders.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/siparis-gecmisi.js"></script>
+  </body>
+</html>

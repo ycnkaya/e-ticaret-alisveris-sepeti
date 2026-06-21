@@ -1,0 +1,28 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# Editor folders
+.vscode/
+.idea/
+
+# Build artefacts
+dist/
+coverage/
+
+# Archives
+*.zip
+
+# OS files
+Thumbs.db
+
+# Ignore completed reference folder if accidentally copied
+../E-Ticaret-Sepeti-TAMAMLANDI/
